@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Mode - Site Blocked</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 2rem;
+        }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .timer {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🎯</div>
+        <h1>Focus Mode Active</h1>
+        <p>This site is blocked to help you stay focused on your goals.</p>
+        <div class="timer" id="timer">Take a deep breath and refocus</div>
+        <div>
+            <a href="javascript:window.close()" class="button">Close Tab</a>
+            <a href="javascript:history.back()" class="button">Go Back</a>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add a countdown timer or motivational quotes
+        const messages = [
+            "Take a deep breath and refocus",
+            "Your future self will thank you",
+            "Stay strong, stay focused",
+            "Progress over perfection",
+            "You've got this!"
+        ];
+        
+        let messageIndex = 0;
+        const timerElement = document.getElementById('timer');
+        
+        setInterval(() => {
+            messageIndex = (messageIndex + 1) % messages.length;
+            timerElement.textContent = messages[messageIndex];
+        }, 3000);
+    </script>
+</body>
+</html>

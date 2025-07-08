@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "ProductivityTracker",
+  "version": "1.0.0",
+  "description": "Track your browsing habits, set daily goals, and boost productivity with insights and focus tools.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "idle",
+    "notifications",
+    "alarms",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ProductivityTracker"
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
